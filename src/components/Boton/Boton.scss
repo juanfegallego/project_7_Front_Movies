@@ -1,0 +1,16 @@
+.boton {
+    height: 3em;
+    width: 5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $texto;
+    transition: 0.2s;
+    cursor: pointer;
+
+}
+
+.boton:hover{
+    background-color: $rojo2;
+    transition: 0.2s;
+}
