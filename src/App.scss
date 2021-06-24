@@ -1,3 +1,10 @@
+@import 'scss/variables.scss';
+@import 'containers/Home/Home.scss';
+@import 'components/Header/Header.scss';
+@import 'components/Boton/Boton.scss';
+@import 'containers/Register/Register.scss';
+@import 'containers/Profile/Profile.scss';
+
 .App {
   text-align: center;
 }
