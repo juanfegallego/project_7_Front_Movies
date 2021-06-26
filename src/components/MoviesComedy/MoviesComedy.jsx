@@ -12,13 +12,13 @@ const MoviesComedy = () => {
     useEffect(() => {
 
         getMoviesComedy()
-    
-      }, [])
+
+    }, [])
 
 
-    const getMoviesComedy = async () =>{
+    const getMoviesComedy = async () => {
         try {
-            let comedy = await axios.get(`http://localhost:3001/movies/genre/comedy`);
+            let comedy = await axios.get(`http://localhost:3001/movies/genre/Comedy`);
             //GUARDANDO EN REDUX
             // props.dispatch({ type: REST, payload: res.data });
             setMoviesComedy(comedy.data.results)
@@ -30,23 +30,20 @@ const MoviesComedy = () => {
     const pruebaSeleccion = (movie) => {
         console.log(movie);
     }
-   
+
     const baseImgUrl = "https://image.tmdb.org/t/p"
-    const size = "w200" 
+    const size = "w200"
 
 
     if (moviesComedy[0]?.id) {
         return (
             <div className="allContent">
-                <div className="movieImage">
-                    <div className="fondoIMage"></div>
-                </div>
                 <div className="movieContent">
                     {moviesComedy.map((movie, index) => (
                         <div className="content" key={index}>
-                            <div className="content2" > COMEDY
-                                <p className="text">{movie.title} </p>
-                                <img src={`${baseImgUrl}/${size}${movie.poster_path}`} alt="poster" onClick={()=>pruebaSeleccion(movie)}/>
+                            <div className="content2" >
+                                {/* <p className="text">{movie.title} </p> */}
+                                <img src={`${baseImgUrl}/${size}${movie.poster_path}`} alt="poster" onClick={() => pruebaSeleccion(movie)} />
                                 {/* <p className="text">{movie.popularity}</p>
                                 <p className="text">{movie.release_date}</p>
                                 <p className="text">{movie.vote_average}</p>
@@ -67,6 +64,8 @@ const MoviesComedy = () => {
                     {/* <img  src={spinner} alt="spinner" width="60" /> */}
                     cargando...
                 </div>
+
+                
             </div>
         );
     }
@@ -75,4 +74,6 @@ const MoviesComedy = () => {
 
 
 
+
 export default MoviesComedy;
+
