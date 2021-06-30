@@ -12,8 +12,7 @@ const Boton = (props) => {
     }
 
     return (
-        <div className="boton" 
-        onClick={()=>llevame()}>
+        <div className="boton" onClick={()=>llevame()}>
             {props.destino}
         </div>
     )
