@@ -1,4 +1,38 @@
 .vistaHome{
 background-color: $fondo ;
 color: $texto;
+height: 100vh;
+
 }
+
+.movieContent{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    overflow: scroll;
+    
+}
+
+.content2{
+  // min-width: 10em;
+  //   max-width: 10em;
+    background-size: cover;
+    background-color: $rojo2;
+    margin: 5px 10px;
+    cursor: pointer;
+    transition: 0.5s ease;
+
+}
+.content2:hover{
+  transform: scale(1.2);
+
+}
+
+
+// .content{
+//     transition: $duration transform;
+//   font-size: 0;
+//   white-space: nowrap;
+//   margin: ($tileHeight / 2) 0;
+//   padding-bottom: 10px;
+// }

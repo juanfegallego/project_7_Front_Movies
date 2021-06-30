@@ -16,6 +16,7 @@ const Home = () => {
                 Home
                 <MoviesHome/>
                 <MoviesComedy/>
+
             </div>
         </div>
     )
