@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
+import { ADD_MOVIE } from "../../redux/type";
+import { connect } from "react-redux";
 
 
 
-const MoviesComedy = () => {
+const MoviesComedy = (props) => {
     let history = useHistory();
 
     const [moviesComedy, setMoviesComedy] = useState([]);
+
+    
 
     useEffect(() => {
 
@@ -19,17 +23,21 @@ const MoviesComedy = () => {
     const getMoviesComedy = async () => {
         try {
             let comedy = await axios.get(`http://localhost:3001/movies/genre/Comedy`);
-            //GUARDANDO EN REDUX
-            // props.dispatch({ type: REST, payload: res.data });
+           
             setMoviesComedy(comedy.data.results)
         } catch (error) {
             console.log(error);
         }
     }
 
-    const pruebaSeleccion = (movie) => {
-        console.log(movie);
-    }
+    const clickHandler = (MovieInfo) => {
+        props.dispatch({ type: ADD_MOVIE, payload: MovieInfo });
+        history.push("/movieInfo");
+      };
+
+    // const pruebaSeleccion = (movie) => {
+    //     console.log(movie);
+    // }
 
     const baseImgUrl = "https://image.tmdb.org/t/p"
     const size = "w200"
@@ -43,14 +51,7 @@ const MoviesComedy = () => {
                         <div className="content" key={index}>
                             <div className="content2" >
                                 {/* <p className="text">{movie.title} </p> */}
-                                <img src={`${baseImgUrl}/${size}${movie.poster_path}`} alt="poster" onClick={() => pruebaSeleccion(movie)} />
-                                {/* <p className="text">{movie.popularity}</p>
-                                <p className="text">{movie.release_date}</p>
-                                <p className="text">{movie.vote_average}</p>
-                                <p className="text">{movie.genre_id}</p>
-                                <p className="text">{movie.overview}</p> */}
-                                {/* <p className="text">{movie.getSimilarMovies}</p> */}
-                                {/* <div className="enviar" onClick={() => llevame()}></div> */}
+                                <img className="posterMovie" src={`${baseImgUrl}/${size}${movie.poster_path}`} alt="poster" onClick={() => clickHandler(movie)} />
                             </div>
                         </div>
                     ))}
@@ -75,5 +76,8 @@ const MoviesComedy = () => {
 
 
 
-export default MoviesComedy;
+export default connect((state) => ({
+    credentials: state.credentials,
+    movie : state.movie
+  }))(MoviesComedy);
 
