@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { LOGOUT } from "../../redux/type";
 import {CLEAR_BOOKINGS} from "../../redux/type";
 import Boton from "../Boton/Boton";
+import Search from "../Search/Search";
 
 
 const Header = (props) => {
@@ -16,10 +17,12 @@ const Header = (props) => {
     props.dispatch({type :CLEAR_BOOKINGS})
   };
 
+
   if (props.credentials?.token !== "") {
 
     return (
       <div className="header">
+        <Search/>
         <div>
           {/* <img className="logo" alt="logo" src={logo} /> */}
         </div>
