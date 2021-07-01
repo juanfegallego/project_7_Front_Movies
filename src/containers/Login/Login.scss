@@ -1,0 +1,71 @@
+
+.vistaLogin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5em;
+    background-color: white;
+    ;
+    height: 100vh;
+
+}
+
+.loginCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-top: 10em;
+}
+
+.inputLogin{
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    border: 0;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    height: 45px;
+    line-height: 45px;  
+    margin-bottom: 10px;
+    font-size: 1em;
+    color: white;
+    background-color: white;
+
+}
+.inputLogin:focus {
+    outline: none;
+    background-color: white;
+    border-color: $rojo2;
+  }
+
+
+
+[type=submit] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 3em;
+    width: 16em;
+    border: 0;
+    position: relative;
+    background-color: #101115;
+    border-radius: 5px;
+    height: 3em;
+    color: rgb(255, 255, 255);
+    font-weight: 400;
+    font-size: 1em;
+    z-index: 1;
+    
+  }
+
+  [type=submit]:hover{
+
+    background-color: $rojo2;
+    transition: 0.3s;
+  }
+
+
+
+  
+  
