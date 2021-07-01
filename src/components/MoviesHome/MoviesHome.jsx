@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
+import { connect } from "react-redux";
+import { ADD_MOVIE } from "../../redux/type";
 
 
 
-const MoviesHome = () => {
+const MoviesHome = (props) => {
     let history = useHistory();
 
     const [movies, setMovies] = useState([]);
@@ -19,20 +21,24 @@ const MoviesHome = () => {
     const getMovies = async () =>{
         try {
             let movies = await axios.get(`http://localhost:3001/movies/`);
-            //GUARDANDO EN REDUX
-            // props.dispatch({ type: REST, payload: res.data });
             setMovies(movies.data.results)
         } catch (error) {
             console.log(error);
         }
     }
 
-    const pruebaSeleccion = (movie) => {
-        console.log(movie);
-    }
+    const clickHandler = (MovieInfo) => {
+         //GUARDANDO EN REDUX
+        props.dispatch({ type: ADD_MOVIE, payload: MovieInfo});
+        history.push("/movieInfo");
+    };
+
+    // const pruebaSeleccion = (movie) => {
+    //     console.log(movie);
+    // }
    
     const baseImgUrl = "https://image.tmdb.org/t/p"
-    const size = "w200" 
+    const size = "w300" 
 
 
     if (movies[0]?.id) {
@@ -45,8 +51,8 @@ const MoviesHome = () => {
                     {movies.map((movie, index) => (
                         <div className="content" key={index}>
                             <div className="content2" >
-                                <p className="text">{movie.title} </p>
-                                <img src={`${baseImgUrl}/${size}${movie.poster_path}`} alt="poster" onClick={()=>pruebaSeleccion(movie)}/>
+                                {/* <p className="text">{movie.title} </p> */}
+                                <img src={`${baseImgUrl}/${size}${movie.poster_path}`} alt="poster" onClick={()=>clickHandler(movie)}/>
                                 {/* <p className="text">{movie.popularity}</p>
                                 <p className="text">{movie.release_date}</p>
                                 <p className="text">{movie.vote_average}</p>
@@ -74,5 +80,7 @@ const MoviesHome = () => {
 
 
 
-
-export default MoviesHome;
+export default connect((state) => ({
+    credentials: state.credentials,
+    movie : state.movie
+  }))(MoviesHome);
