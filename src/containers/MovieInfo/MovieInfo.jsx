@@ -108,16 +108,12 @@ const MovieInfo = (props) => {
     return (
       <div className="contentDetail">
         <div className="vistaDetail">
-          <div className="imagenD">
-            <img
-              src={`${baseImgUrl}/${size}${props.movie.poster_path}`}
-              alt="poster"
-            />
-          <img className="back_img" src={`${baseImgUrl}/${size_back_drop}${props.movie.backdrop_path}`}
-          alt="backdrop_path"/>
+          <div className="imagenMovie">
+            <img className="backImg" src={`${baseImgUrl}/${size_back_drop}${props.movie.backdrop_path}`} alt="backdrop_path"/>
+            <img className="posterImg" src={`${baseImgUrl}/${size}${props.movie.poster_path}`} alt="poster"/>
           </div>
           <div className="contentSpan">
-              <p className="titleD">{props.movie.original_title} </p>
+              <p className="titleD">{props.movie.title} </p>
               <p className=" over">Overview {props.movie.overview}</p>
               <p className=" vote">Vote {props.movie.vote_average}</p>
               <p className=" popu">populatity{props.movie.popularity}</p>
