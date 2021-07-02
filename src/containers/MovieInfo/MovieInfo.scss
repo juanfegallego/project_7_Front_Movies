@@ -1,0 +1,18 @@
+
+.contentDetail{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.imagenMovie{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .backImg{
+        width: 100vw;
+        height: 45em;
+    }
+    .posterImg{}
+}
