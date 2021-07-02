@@ -18,3 +18,14 @@
     justify-content: center;
 }
 
+.imgUser{
+    display: flex;
+    height: 2.5em;
+    width: 2.5em;
+    border-radius: 50%;
+    background-color: white;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
