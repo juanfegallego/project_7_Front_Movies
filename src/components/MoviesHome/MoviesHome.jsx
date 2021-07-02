@@ -53,11 +53,6 @@ const MoviesHome = (props) => {
                             <div className="content2" >
                                 {/* <p className="text">{movie.title} </p> */}
                                 <img src={`${baseImgUrl}/${size}${movie.poster_path}`} alt="poster" onClick={()=>clickHandler(movie)}/>
-                                {/* <p className="text">{movie.popularity}</p>
-                                <p className="text">{movie.release_date}</p>
-                                <p className="text">{movie.vote_average}</p>
-                                <p className="text">{movie.genre_id}</p>
-                                <p className="text">{movie.overview}</p> */}
                                 {/* <p className="text">{movie.getSimilarMovies}</p> */}
                                 {/* <div className="enviar" onClick={() => llevame()}></div> */}
                             </div>
