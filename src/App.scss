@@ -8,7 +8,13 @@
 @import 'containers/Login/Login.scss';
 @import 'components/Spinner/Spinner.scss';
 @import 'containers/MovieInfo/MovieInfo.scss';
+@import 'containers/ProfileAdmin/ProfileAdmin.scss';
+@import 'containers/SearchInfo/SearchInfo.scss';
 
+body{
+  background: rgb(184,29,36);
+  background: linear-gradient(114deg, rgba(184,29,36,1) 0%, rgba(34,31,31,1) 100%); 
+}
 .App {
   text-align: center;
 }
