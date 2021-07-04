@@ -5,26 +5,28 @@ import moment from 'moment';
 import Rental from '../../components/Rental/Rental';
 import { RENTALS } from '../../redux/type';
 import axios from 'axios';
+import ProfileAdmin from '../ProfileAdmin/ProfileAdmin';
 
 
 const Profile = (props) => {
     let history = useHistory();
 
-    useEffect(() => {
-        setTimeout(() => {
-            getUserBokings()
-        }, 1000);
-    }, [])
-    const getUserBokings = async () => {
-        try {
-            let res = await axios.get(`http://localhost:3001/orders/${props.credentials.idUser}`,{headers:{'authorization':'Bearer ' + props.credentials.token}});
-            //GUARDANDO EL REDUX
-            props.dispatch({ type: RENTALS, payload: res.data });
-        } catch (error) {
-            console.log(error)
-        }
-    }
-    if (props.credentials?.user.token !== '') {
+    // useEffect(() => {
+    //     setTimeout(() => {
+    //         getUserBokings()
+    //     }, 1000);
+    // }, [])
+    // const getUserBokings = async () => {
+    //     try {
+    //         let res = await axios.get(`http://localhost:3001/orders/${props.credentials.idUser}`,{headers:{'authorization':'Bearer ' + props.credentials.token}});
+    //         //GUARDANDO EL REDUX
+    //         props.dispatch({ type: RENTALS, payload: res.data });
+    //     } catch (error) {
+    //         console.log(error)
+    //     }
+    // }
+    // props.credentials?.user.token !== ''
+    if (props.credentials?.user.isAdmin === false) {
         return (
             <div className="bodyProfile">
                 <div className="cardProfile">
@@ -47,11 +49,9 @@ const Profile = (props) => {
             </div>
         )
     } else {
-        setTimeout(() => {
-            history.push("/login");
-        }, 3000)
+
         return (
-            <div>NO ESTAS LOGEADO, NO PUEDES ENTRAR AQUI</div>
+            <ProfileAdmin/>
         )
     }
 }
