@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useHistory } from "react-router-dom";
 import { connect } from 'react-redux';
 import axios from "axios"
-import {LOGIN} from "../../redux/type"
+import { LOGIN } from "../../redux/type"
 
 
 
@@ -92,13 +92,19 @@ const Login = (props) => {
         user: res.data.user,
         idUser: res.data.user._id,
       };
-      // console.log(data)
+      console.log(res.data.user)
 
       props.dispatch({ type: LOGIN, payload: data });
 
       setTimeout(() => {
-        history.push("/");
-      }, 100);
+        history.push("/profile");
+      }, 0);
+
+      // if (res.data.user.isAdmin === false) {
+      //   history.push('/profile')
+      // } else {
+      //   history.push('/profileAdmin')
+      // }
     } catch (err) {
       setMensajeError(err);
     }
@@ -115,8 +121,8 @@ const Login = (props) => {
             name="email"
             title="email"
             placeholder="Email...example@example.com"
-              onChange={updateCredentials}
-              onBlur={() => checkLogin("email")}
+            onChange={updateCredentials}
+            onBlur={() => checkLogin("email")}
             lenght="30"
           />
           <div>{errorLogin.eEmail}</div>
@@ -125,8 +131,8 @@ const Login = (props) => {
             name="password"
             title="password"
             placeholder="Password"
-              onChange={updateCredentials}
-              onBlur={() => checkLogin("password")}
+            onChange={updateCredentials}
+            onBlur={() => checkLogin("password")}
             lenght="30"
           />
           <div>{errorLogin.ePassword}</div>
