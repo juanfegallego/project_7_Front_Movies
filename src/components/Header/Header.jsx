@@ -5,6 +5,7 @@ import { LOGOUT } from "../../redux/type";
 import {CLEAR_BOOKINGS} from "../../redux/type";
 import Boton from "../Boton/Boton";
 import Search from "../Search/Search";
+import logo from "../img/logo.png"
 
 
 const Header = (props) => {
@@ -24,7 +25,7 @@ const Header = (props) => {
       <div className="header">
         <Search/>
         <div>
-          {/* <img className="logo" alt="logo" src={logo} /> */}
+          <img className="logo" alt="logo" src={logo } width="50px" />
         </div>
         <div className="text">
           <Boton lugar="/" destino="Home" onClick={() => takeMe("/")} />
@@ -43,7 +44,7 @@ const Header = (props) => {
     return (
       <div className="header">
         <div>
-          {/* <img className="logo" alt="logo" src={logo} /> */}
+          <img className="logo" alt="logo" src={logo} width="50px" />
         </div>
         <div className="text">
           <Boton lugar="/" destino="Home" onClick={() => takeMe("/")}></Boton>
