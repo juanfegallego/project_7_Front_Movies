@@ -1,0 +1,56 @@
+.bodyProfileAdmin{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-top: 8em;
+    margin: 2em;
+}
+
+.cardProfileAdmin {
+    display: flex;
+    height: 10em;
+    width: 22em;
+    border-radius: 5px;
+    color: white;
+    background-color: $fondo;
+    padding: 2em;
+    font-size: medium;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .allRents{
+      display: flex;
+      flex-direction: row;
+  }
+  .orderContent{
+    display: flex;
+    flex-direction: row;
+    padding: 2em;
+    overflow: scroll;
+    flex-wrap: wrap;
+    justify-content: center;
+      .info{
+        background: #221F1F;
+        color: white;
+        padding: 1em;
+        width: 17em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .buttonDelete{
+        background: red;
+        border-radius: 1em;
+        width: 9em;
+        height: 2em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+      }
+  }
+
+ 
