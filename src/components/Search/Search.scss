@@ -1,0 +1,20 @@
+[type=submit] {
+    margin: 3em;
+    width: 16em;
+    border: 0;
+    position: relative;
+    background-color: #101115;
+    border-radius: 5px;
+    height: 3em;
+    color: rgb(255, 255, 255);
+    font-weight: 400;
+    font-size: 1em;
+    z-index: 1;
+    
+  }
+
+  [type=submit]:hover{
+
+    background-color: #101115;
+    transition: 0.3s;
+  }

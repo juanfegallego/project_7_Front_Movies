@@ -32,9 +32,9 @@ const MoviesQuery = (props) => {
     }
     console.log(movie)
     return (
-            <div className="spinnerContainer">
-                <div className="spinner">
-                    <input className="option" type="text" id="title" name="name" onClick={() => findTitle(updateDatos)}/>
+            <div className="inputContainer">
+                <div className="inputSearch">
+                    <input className="inputSearch" type="text" id="title" name="name" onClick={() => findTitle(updateDatos)}/>
                     <button className="sendButton" name="movie" onClick={() => findTitle(updateDatos)} >Find</button>
                 </div>
             </div>
