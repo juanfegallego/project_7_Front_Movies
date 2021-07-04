@@ -4,11 +4,15 @@
     background-color: $fondo;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     position: sticky;
     top: 0;
     z-index: 2;
+    .header::after{
+        scroll-behavior: auto;
+    background-color: #221f1f69;
+    }
 }
 
 .text{
@@ -28,4 +32,21 @@
     justify-content: center;
     align-items: center;
     position: relative;
+}
+.sendButton{
+    width: 5em;
+    height: 2em;
+    border-radius: 1em;
+    border: transparent;
+}
+
+.inputSearch{
+    border: transparent;
+    width: 15em;
+    height: 2em;
+    border-radius: 1em;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
