@@ -9,10 +9,61 @@
 .imagenMovie{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     .backImg{
         width: 100vw;
         height: 45em;
+        mix-blend-mode: soft-light;
     }
-    .posterImg{}
+    .title{
+        font-size: 10em;
+        position: absolute;
+        color: transparent;
+        -webkit-text-stroke: 2px white;
+    }
+
+}
+
+.contentSpan{
+    display: flex;
+    flex-direction: row;
+    padding: 4em;
+    align-items: center;
+    justify-content: space-around;
+
+    .posterImg{
+        border-radius: 0.8em;
+        box-shadow: 1em 2em 3em black ;
+    }
+    .textSpan{
+        display: flex;
+        flex-direction: column;
+        color: white;
+        .over{
+            width: 40em;
+            text-align: center;
+        }
+        .buttonRent{
+            height: 2em;
+            background: black;
+            color: white;
+            border: transparent;
+            border-radius: 0.4em;
+        }
+        .box1{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 1em;
+        }
+        .input1{
+            height: 2em;
+            width: 16em;
+            color: black;
+            border: transparent;
+            border-radius: 0.4em;
+            padding-left: 1em;
+        }
+    }
 }
