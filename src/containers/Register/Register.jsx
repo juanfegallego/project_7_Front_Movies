@@ -36,6 +36,8 @@ const Register = () => {
     ePassword: "",
     eTelephone: "",
     eBirthday: "",
+    eCountry: "",
+    eCity:"",
   });
 
 
@@ -162,8 +164,9 @@ const Register = () => {
       email: datosUser.email,
       password: datosUser.password,
       telephone: datosUser.telephone,
-      country: document.getElementById('opcionCountry').value,
-      city:  document.getElementById('opcionCity').value,
+      country: datosUser.country, 
+      // document.getElementById('opcionCountry')
+      city: datosUser.city,
       birthday: datosUser.birthday,
     };
 
@@ -243,7 +246,27 @@ const Register = () => {
         ></input>
         <div className="error">{errors.eTelephone}</div>
 
-        <select
+        <input
+          className="inputBase"
+          type="string"
+          name="country"
+          onChange={updateFormulario}
+          placeholder="country"
+          onBlur={() => checkError("Country")}
+        ></input>
+        <div className="error">{errors.eCountry}</div>
+
+        <input
+          className="inputBase"
+          type="string"
+          name="city"
+          onChange={updateFormulario}
+          placeholder="city"
+          onBlur={() => checkError("City")}
+        ></input>
+        <div className="error">{errors.eCity}</div>
+
+        {/* <select
         className="inputBase"
 
           name="country"
@@ -251,11 +274,11 @@ const Register = () => {
           id="opcionCountry">
             <option disabled>Country</option>
             <option value="spain">Spain</option>
-        </select>
+        </select> */}
 
 
 
-        <select
+        {/* <select
          className="inputBase"
 
           name="country"
@@ -263,7 +286,7 @@ const Register = () => {
           id="opcionCity">
             <option disabled>City</option>
             <option value="valencia" >Valencia</option>
-        </select>
+        </select> */}
      
 
         
