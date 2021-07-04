@@ -61,8 +61,10 @@ const Rental = (props) => {
 
                     <div key={index} className="orderCards">
 
-                        <img src={`${baseImgUrl}/${size}${order.poster_path}`} alt="posterCuliao" onClick={()=>clickHandler(order)}/>
+                        <img src={`${baseImgUrl}/${size}${order.imageMovie}`} alt="poster" onClick={()=>clickHandler(order)}/>
                         <div className="info">
+                            <p className="order"> User name: {(order.name)}</p>
+                            <p className="order"> User surname: {(order.surname)}</p>
                             <p className="order"> Rental Date : { moment (order.rentalDate).format('LL')} </p>
                             <p className="order"> Return Date : { moment (order.returnDate).format('LL')} </p>
                         </div>
