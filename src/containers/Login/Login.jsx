@@ -128,6 +128,7 @@ const Login = (props) => {
           <div>{errorLogin.eEmail}</div>
           <input
             className="inputLogin"
+            type="password"
             name="password"
             title="password"
             placeholder="Password"
