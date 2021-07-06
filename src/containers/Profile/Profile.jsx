@@ -11,21 +11,7 @@ import ProfileAdmin from '../ProfileAdmin/ProfileAdmin';
 const Profile = (props) => {
     let history = useHistory();
 
-    // useEffect(() => {
-    //     setTimeout(() => {
-    //         getUserBokings()
-    //     }, 1000);
-    // }, [])
-    // const getUserBokings = async () => {
-    //     try {
-    //         let res = await axios.get(`http://localhost:3001/orders/${props.credentials.idUser}`,{headers:{'authorization':'Bearer ' + props.credentials.token}});
-    //         //GUARDANDO EL REDUX
-    //         props.dispatch({ type: RENTALS, payload: res.data });
-    //     } catch (error) {
-    //         console.log(error)
-    //     }
-    // }
-    // props.credentials?.user.token !== ''
+ 
     if (props.credentials?.user.isAdmin === false) {
         return (
             <div className="bodyProfile">
