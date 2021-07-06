@@ -20,7 +20,7 @@ const MoviesHome = (props) => {
 
     const getMovies = async () =>{
         try {
-            let movies = await axios.get(`http://localhost:3001/movies/`);
+            let movies = await axios.get(`https://back-rental-movies.herokuapp.com//movies/`);
             setMovies(movies.data.results)
         } catch (error) {
             console.log(error);

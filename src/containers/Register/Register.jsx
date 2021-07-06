@@ -172,7 +172,7 @@ const Register = () => {
 
     console.log("soy ejecuta",user)
     axios
-      .post("http://localhost:3001/users/", user)
+      .post("https://back-rental-movies.herokuapp.com//users/", user)
       .then((res) => {})
       .catch((error) => {
         console.log(error);
