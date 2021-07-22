@@ -52,7 +52,7 @@ const MovieInfo = (props) => {
       // Envío por axios
       console.log('body', body);
       axios
-        .post("http://localhost:3001/orders", body, { headers: { 'authorization': 'Bearer ' + token } })
+        .post("https://back-rental-movies.herokuapp.com/orders", body, { headers: { 'authorization': 'Bearer ' + token } })
         .then((res) => {
           console.log("holaaaaa", res.data.results)
           setTimeout(() => {

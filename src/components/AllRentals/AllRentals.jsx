@@ -60,7 +60,7 @@ const AllRentals = (props) => {
         id: order.id
     }
 
-    await axios.post('http://localhost:3001/orders/adminDelete', body, { headers: { 'authorization': 'Bearer ' + token } })
+    await axios.post('https://back-rental-movies.herokuapp.com/orders/adminDelete', body, { headers: { 'authorization': 'Bearer ' + token } })
 
     window.location.reload();
 
