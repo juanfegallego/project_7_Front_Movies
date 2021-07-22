@@ -22,7 +22,7 @@ const MoviesComedy = (props) => {
 
     const getMoviesComedy = async () => {
         try {
-            let comedy = await axios.get(`https://back-rental-movies.herokuapp.com//movies/genre/Comedy`);
+            let comedy = await axios.get(`https://back-rental-movies.herokuapp.com/movies/genre/Comedy`);
            
             setMoviesComedy(comedy.data.results)
         } catch (error) {
